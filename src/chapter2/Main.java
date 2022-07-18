@@ -38,54 +38,54 @@ public class Main {
 //        }
 
 //  11.
-//        String str = "abcde";
-//        System.out.println(str.charAt(5));
+        String str = "abcde";
+        System.out.println(str.charAt(5));
 
 //  12.
-//        String str = "abcde";
-//        System.out.println(str.indexOf("abcdef"));
+        String str2 = "abcde";
+        System.out.println(str2.indexOf("abcdef"));
 
 //  13.
-//        String str = "abcde";
-//        System.out.println(str.substring(2, 4));
+        String str3 = "abcde";
+        System.out.println(str3.substring(2, 4));
 
 //  14.
-//        String str = "aaaa";
-//        System.out.println(str.replace("aa", "b"));
+        String str4 = "aaaa";
+        System.out.println(str4.replace("aa", "b"));
 
 //  15.
-//        String str = "abcde";
-//        System.out.println(str.charAt(str.length()));
+        String str5 = "abcde";
+        System.out.println(str.charAt(str5.length()));
 
 //  16.
-//        String str = "abcde";
-//        System.out.println(str.substring(1, 3).startsWith("b"));
+        String str8 = "abcde";
+        System.out.println(str8.substring(1, 3).startsWith("b"));
 
 //  17.
-//        String str = "Hello, ".concat("Java!");
-//        System.out.println(str);
+        String str9 = "Hello, ".concat("Java!");
+        System.out.println(str9);
 
 //  18.
-//        System.out.println(10 + 20 + "30" + 40);
+        System.out.println(10 + 20 + "30" + 40);
 
 //  19.
-//        String str = null;
-//        str += "null";
-//        System.out.println(str);
+        String str10 = null;
+        str10 += "null";
+        System.out.println(str10);
 
 //  20.
-//        StringBuilder sb = new StringBuilder("abcde");
-//        System.out.println(sb.capacity());
+        StringBuilder sb = new StringBuilder("abcde");
+        System.out.println(sb.capacity());
 
 //  21.
-//        StringBuilder sb = new StringBuilder();
-//        sb.append("abcde");
-//        sb.reverse();
-//        sb.replace(1, 3, "a");
-//        System.out.println(sb);
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append("abcde");
+        sb2.reverse();
+        sb2.replace(1, 3, "a");
+        System.out.println(sb2);
 
 //  22.
-        StringBuilder sb = new StringBuilder("abcde");
-        System.out.println(sb.indexOf("bcd"));
+        StringBuilder sb3 = new StringBuilder("abcde");
+        System.out.println(sb3.indexOf("bcd"));
     }
 }
