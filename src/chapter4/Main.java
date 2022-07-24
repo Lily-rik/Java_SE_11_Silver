@@ -56,7 +56,75 @@ public class Main {
             j += 1;
         }
 
+//  8.
+        for (int i = 0; i < 3; i++, period()) {
+            System.out.print(i);
+        }
+
+//  9.
+        int array[][] = new int[][]{{1, 2}, {2, 3, 4}};
+        int total = 0;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i; j < array[i].length; j++) {
+                total += array[i][j];
+            }
+            System.out.println(total);
+        }
+
+//  11.
+        String[][] array2 = {{"A", "B", "C"}};
+        for (Object obj : array2) {
+            System.out.println(obj);
+        }
+
+//  12.
+        String[] array3 = {"A", "B", "C"};
+        for (String str : array3) {
+            str = "D";
+        }
+        for (String str : array3) {
+            System.out.print(str);
+        }
+
+//  13.
+//    設問
+        int num = 10;
+        do {
+            num++;
+        } while (++num < 10);   // do後に+1で11。条件式の前に+1で12。条件には当てはまらないため処理終了。
+        System.out.println(num);    // num = 12
+
+//    A
+        while (++num < 10) {    // 条件式前に+1で11。条件式に合わないため処理終了。
+            num++;
+        }
+        System.out.println(num);    // num = 11
+
+//    B
+        while (++num <= 10) {   // 条件式前に+1で11。条件式に合わないため処理終了。
+            num++;
+        }
+        System.out.println(num);    // num = 11
+
+//    C
+        while (num++ < 10) {    // 条件式に合わないため処理終了。処理後に+1で11。
+            num++;
+        }
+        System.out.println(num);    // num = 11
+
+//    D
+        while (num++ <= 10) {   // 条件式に合うため処理実行。条件式後に+1で11。
+            num++;
+        }   // 処理実行後に+1で12。
+        // 再度条件式に入りfalseのため処理終了。条件式後に+1で13。
+        System.out.println(num);    // num = 13
+
 
     }
+
+    private static void period() {
+        System.out.print(",");
+    }
+
 
 }
