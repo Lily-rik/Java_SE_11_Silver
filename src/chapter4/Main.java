@@ -119,6 +119,16 @@ public class Main {
         // 再度条件式に入りfalseのため処理終了。条件式後に+1で13。
         System.out.println(num);    // num = 13
 
+//  14.
+        String[] array4 = {"A", "B"};
+        for (String f : array4) {
+            for (String g : array4) {
+                if ("B".equals(g))
+                    break;
+                System.out.print(g);
+            }
+        }
+
 
     }
 
