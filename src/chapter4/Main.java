@@ -129,12 +129,32 @@ public class Main {
             }
         }
 
+//  15.
+        int[] array5 = {1, 2, 3, 4, 5};
+        int total2 = 0;
+        for (int i : array5) {
+            if (i % 2 == 0)
+                continue;
+            total2 += i;
+        }
+        System.out.println(total2);
+
+//  16.
+        //  二重ループでbreakを使用したコード
+        sample2:
+        // 外側のループにラベルを入れる
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                if (3 < j) {
+                    break sample2;  // ラベルsampleのループを抜ける
+                }
+            }
+        }
 
     }
 
     private static void period() {
         System.out.print(",");
     }
-
 
 }
