@@ -113,16 +113,71 @@ public class Sample {
 //        num = 100;
 //    }
 
-    // もし、クラス変数を初期化するための何らかの処理を記述したいのであれば、
-    // 初期化子ではなく、static初期化子を使用する。
-    static int num;
+//    // もし、クラス変数を初期化するための何らかの処理を記述したいのであれば、
+//    // 初期化子ではなく、static初期化子を使用する。
+//    static int num;
+//
+//    static {
+//        num = 10;
+//    }
+//
+//    public Sample() {
+//        num = 100;
+//    }
 
-    static {
-        num = 10;
-    }
+//  23.
+//    // 戻り値が設定されているため、メソッド
+//    void Sample() {
+//        System.out.println("A");
+//    }
+//
+//    // コンストラクタ
+//    // ひとつでもコンストラクタが定義されている場合は、デフォルトコンストラクタは定義されない
+//    Sample(String str) {
+//        System.out.println(str);
+//    }
 
-    public Sample() {
-        num = 100;
+//  24.
+//    public Sample() {
+//        this(null, 0);
+//    }
+//
+//    public Sample(String str, int num) {
+//        System.out.println("OK.");
+//    }
+
+//  25.
+//    public Sample() {
+//        System.out.println("A");
+//        // オーバーロードされた別のコンストラクタを呼び出すコードは、処置の後に記述することはできない
+//        // (最初に記述しなければならない)
+//        this("B");
+//    }
+//
+//    public Sample(String str) {
+//        System.out.println(str);
+//    }
+//
+//    // 実行結果
+//    // java: thisの呼出しはコンストラクタの先頭文である必要があります
+
+//  28.
+//    // カプセル化
+//    private int num;
+//
+//    public int getNum() {
+//        return num;
+//    }
+//
+//    private void setNum(int num) {
+//        this.num = num;
+//    }
+
+    //  29.30.
+    int num;
+
+    public Sample(int num) {
+        this.num = num;
     }
 
 

@@ -99,14 +99,40 @@ public class Main {
 //        Sample s = new Sample();
 
 //  22.
-        // staticで修飾されたクラス変数は、インスタンスを生成していない場合、
-        // 初期化子やコンストラクタの影響を受けず、デフォルト値で初期化されたまま変更されない。
-        System.out.println(Sample.num);
+//        // staticで修飾されたクラス変数は、インスタンスを生成していない場合、
+//        // 初期化子やコンストラクタの影響を受けず、デフォルト値で初期化されたまま変更されない。
+//        System.out.println(Sample.num);
+//
+//        // 以下のようにインスタンスを生成し利用した場合は、初期化子、コンストラクタの影響を受ける
+//        Sample s = new Sample();
+//        System.out.println(Sample.num);
 
-        // 以下のようにインスタンスを生成し利用した場合は、初期化子、コンストラクタの影響を受ける
-        Sample s = new Sample();
-        System.out.println(Sample.num);
+//  23.
+//        // コンストラクタには引数が必要なため、引数なしでインスタンスを生成しようとするとコンパイルエラーになる
+//        Sample s = new Sample();
+//
+//        // 実行結果
+//        // java: クラス chapter6.Sampleのコンストラクタ Sampleは指定された型に適用できません。
+//        // 期待値: java.lang.String
+//        // 検出値:    引数がありません
+//        // 理由: 実引数リストと仮引数リストの長さが異なります
 
+//  24.
+//        Sample s = new Sample();
+
+//  25.
+//        Sample s = new Sample();
+
+//  29.
+//        Sample s = new Sample(10); // ここでnum=10で初期化される
+//        modify(s.num);  // ここではnumフィールドのコピーされた値が使用されている
+//        System.out.println(s.num);
+
+//  30.
+        Sample s = new Sample(10);
+        modify(s);  // Sampleインスタンスへの参照がコピーされて引数として渡されている
+        // 参照値は異なるが、参照先は同じインスタンスであるため、値はメソッド内で処理された値が取得される
+        System.out.println(s.num);
 
     }
 
@@ -118,6 +144,16 @@ public class Main {
 //    private double calc(int a, double b) {
 //        return (a + b) / 2;
 //    }
+
+//  29.
+//    private static void modify(int num) {
+//        num *= 2;
+//    }
+
+    //  30.
+    private static void modify(Sample s) {
+        s.num *= 2;
+    }
 
 
 }
