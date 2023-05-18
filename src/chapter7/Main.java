@@ -49,10 +49,25 @@ public class Main {
 //        i.hello();
 
 //  17.
-        H h = new H();
-        I i = (I) h;    // 変数hの参照先にあるインスタンスは、Hのインスタンスである。
-        // HのインスタンスにはIの差分が含まれていないため、Iでオーバーライドしたメソッドは実行できずエラーとなる。
-        i.hello();
+//        H h = new H();
+//        I i = (I) h;    // 変数hの参照先にあるインスタンスは、Hのインスタンスである。
+//        // HのインスタンスにはIの差分が含まれていないため、Iでオーバーライドしたメソッドは実行できずエラーとなる。
+//        i.hello();
+
+
+//        Sample2 s = new Sample2(10);
+//        System.out.println(s.getNum());
+
+//  19.
+//        Child child = new Child();
+//        child.name = "sample";
+//        System.out.println(child.getName());
+
+//  20.
+//        F f = new G();
+
+//  21.
+        new Child("D");
     }
 
 //  7.
