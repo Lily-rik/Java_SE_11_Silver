@@ -2,14 +2,17 @@ package chapter8;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 public class Main {
     public static void main(String[] args) {
 //        3.
 //        ラムダ式はそれを囲むブロックと同じスコープを持つため、以下のように変数宣言するとコンパイえるエラーになる。
 //        String val = "A";
-        Function f = (val) -> {
+        Function1 f = (val) -> {
             System.out.println(val);
         };
         f.test("B");
@@ -48,6 +51,27 @@ public class Main {
         if (x.test(new Sample(20))) {
             System.out.println("ok");
         }
+
+//     6.
+//     Supplierの利用例
+        Supplier<String> func = () -> {
+            return "Hello, Lambda";
+        };
+        System.out.println(func.get());
+
+//      7.
+//      Functionの利用例
+        Function<String, Integer> funct = (str) -> {
+            return Integer.parseInt(str);
+        };
+        System.out.println(funct.apply("100") * 2);
+
+//      8.
+//      Consumerの利用例
+        Consumer<String> functi = str -> {
+            System.out.println("Hello " + str);
+        };
+        functi.accept("Java");
     }
-    
+
 }
