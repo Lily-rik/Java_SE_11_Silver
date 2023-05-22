@@ -5,6 +5,7 @@ import chapter2.A;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class Main {
     public static void main(String[] args) {
@@ -76,11 +77,95 @@ public class Main {
         list11.add(new Item("B", 200));
         list11.add(new Item("C", 300));
         list11.add(new Item("A", 100));
+        // removeメソッドは、インデックス指定だけでなく、引数で受け取った要素も削除できる
+        // ※ただし、削除するのは条件に合う最初の要素のみ
         list11.remove(new Item("A", 500));
         for (Item item : list11) {
             System.out.println(item.getName());
         }
 
+//        12.
+        ArrayList<String> list12 = new ArrayList<>();
+        list12.add("A");
+        list12.add("B");
+        list12.add("C");
+        for (String str : list12) {
+            if ("B".equals(str)) {
+                // removeメソッドで要素が削除されると、次の要素が繰り上がる
+                // for文では次のindexを取り出すが"C"は繰り上がったためそこに要素はなく、ループは終了となる
+                list12.remove(str);
+            } else {
+                System.out.println(str);
+            }
+        }
+
+//        13.
+//        ArrayList<String> list13 = new ArrayList<>();
+//        list13.add("A");
+//        list13.add("B");
+//        list13.add("C");
+//        list13.add("D");
+//        list13.add("E");
+//        // ArrayListはスレッドセーフなクラスではないため、removeメソッドの実行後に読み出しを行うと例外がスローされる
+//        for (String str : list13) {
+//            if ("C".equals(str)) {
+//                list13.remove(str);
+//            }
+//        }
+//        for (String str : list13) {
+//            System.out.println(str);
+//        }
+
+//        15.
+        String[] a = {"b", "c"};
+        String[] b = {"a", "b", "c"};
+        System.out.println(Arrays.mismatch(a, b));
+
+//    16.
+        String[] c = {"B", "A"};
+        String[] d = {"A", "B"};
+        // 第一引数"B"は第二引数"A"より辞書順が後なので、正の値「1」が返る
+        // 先に場合は負の値「-1」、等しいときは「0」を返す
+        System.out.println(Arrays.compare(c, d));
+
+//        17.
+        // asListは固定長であり要素の削除ができないため、ArrayListを生成し直している
+        List<String> list17 = new ArrayList<>(
+                Arrays.asList(new String[]{"A", "B", "C"})
+        );
+        list17.removeIf(
+                (String s) -> {
+                    return s.equals("B");
+                }
+        );
+        System.out.println(list17);
+
+//        18.
+        List<String> list18 = List.of("A", "B", "C");
+        // forEacはConsumer型を返す
+        list18.forEach(str -> System.out.println(str));
+        // 以下と同じ
+        Consumer<String> logic = (str) -> {
+            System.out.println(str);
+        };
+        list18.forEach(logic);
+
+        // メソッド参照を使用することでさらに簡略化できる
+        list18.forEach(System.out::println);
+
+        // メソッド参照
+        Consumer<String> logic2 = chapter9.Main::test;
+        list18.forEach(logic2);
+
     }
+
+    public static void test(String str) {
+        System.out.println(str);
+    }
+
+    // 以下のように互換性のないメソッドへの参照は代入できずエラーになる
+//    public static String test(String str, int num) {
+//        System.out.println(str);
+//    }
 
 }
